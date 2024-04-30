@@ -190,7 +190,7 @@ export default function Icons({ icon, width = 15, height = 15 }: IconsProps) {
 		</svg>
 	);
 	const Sort = (
-		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M4 17V16H8.75V17H4ZM4 12.5V11.5H14.365V12.5H4ZM4 8V7H20V8H4Z" fill="currentColor" />
 		</svg>
 	);

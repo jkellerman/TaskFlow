@@ -5,84 +5,84 @@
 *,
 ::after,
 ::before {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 240 22% 5%;
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 240 22% 5%;
 
-    --border-color: 219 63% 95%;
+		--border-color: 219 63% 95%;
 
-    --destructive: 0 98% 52%;
+		--destructive: 0 98% 52%;
 
-    --today-text: 151 92% 26%;
-    --today-background: 158 90% 69%;
-    --today-border: 163 36% 60%;
+		--today-text: 151 92% 26%;
+		--today-background: 158 90% 69%;
+		--today-border: 163 36% 60%;
 
-    --tomorrow-text: 209 78% 29%;
-    --tomorrow-background: 194 100% 72%;
-    --tomorrow-border: 214 94% 61%;
+		--tomorrow-text: 209 78% 29%;
+		--tomorrow-background: 194 100% 72%;
+		--tomorrow-border: 214 94% 61%;
 
-    --future-date-text: 242 48% 58%;
-    --future-date-background: 258 99% 85%;
-    --future-date-border: 242 48% 58%;
+		--future-date-text: 242 48% 58%;
+		--future-date-background: 258 99% 85%;
+		--future-date-border: 242 48% 58%;
 
-    --past-date-text: 7 95% 45%;
-    --past-date-background: 14 89% 72%;
-    --past-date-border: 14 67% 59%;
+		--past-date-text: 7 95% 45%;
+		--past-date-background: 14 89% 72%;
+		--past-date-border: 14 67% 59%;
 
-    --primary: 242 48% 58%;
-    --primary-foreground: 0 0% 100%;
+		--primary: 242 48% 58%;
+		--primary-foreground: 0 0% 100%;
 
-    --secondary: 219 63% 98%;
-    --secondary-lighter: 219 60% 98%;
-    --secondary-darker: 228 88% 81%;
+		--secondary: 219 63% 98%;
+		--secondary-lighter: 219 60% 98%;
+		--secondary-darker: 228 88% 81%;
 
-    --tertiary: 240 14% 8%;
-    --tertiary-lighter: 240 7% 15%;
-    --tertiary-darker: 240 22% 5%;
+		--tertiary: 240 14% 8%;
+		--tertiary-lighter: 240 7% 15%;
+		--tertiary-darker: 240 22% 5%;
 
-    --text-color: 225 4% 45%;
-  }
-  .dark {
-    --background: 240 22% 5%;
-    --foreground: 0 0% 100%;
+		--text-color: 225 4% 45%;
+	}
+	.dark {
+		--background: 240 22% 5%;
+		--foreground: 0 0% 100%;
 
-    --border-color: 240 7% 20%;
+		--border-color: 240 7% 20%;
 
-    --destructive: 0 78% 63%;
+		--destructive: 0 78% 63%;
 
-    --today-text: 151 90% 64%;
-    --today-background: 155 32% 15%;
-    --today-border: 163 41% 31%;
+		--today-text: 151 90% 64%;
+		--today-background: 155 32% 15%;
+		--today-border: 163 41% 31%;
 
-    --tomorrow-text: 209 90% 64%;
-    --tomorrow-background: 225 32% 15%;
-    --tomorrow-border: 214 44% 26%;
+		--tomorrow-text: 209 90% 64%;
+		--tomorrow-background: 225 32% 15%;
+		--tomorrow-border: 214 44% 26%;
 
-    --future-date-text: 256 83% 75%;
-    --future-date-background: 258 29% 15%;
-    --future-date-border: 258 28% 29%;
+		--future-date-text: 256 83% 75%;
+		--future-date-background: 258 29% 15%;
+		--future-date-border: 258 28% 29%;
 
-    --past-date-text: 7 90% 64%;
-    --past-date-background: 14 32% 15%;
-    --past-date-border: 14 44% 26%;
+		--past-date-text: 7 90% 64%;
+		--past-date-background: 14 32% 15%;
+		--past-date-border: 14 44% 26%;
 
-    --primary: 260 89% 61%;
-    --primary-foreground: 0 0% 100%;
-  }
+		--primary: 260 89% 61%;
+		--primary-foreground: 0 0% 100%;
+	}
 }
 
 @layer base {
-  body {
-    @apply bg-background;
-  }
+	body {
+		@apply bg-background;
+	}
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
 }

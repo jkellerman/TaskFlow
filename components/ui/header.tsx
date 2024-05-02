@@ -5,7 +5,7 @@ import Logo from "./logo";
 export default function Header() {
 	return (
 		<header className="flex">
-			<div className="flex min-w-[115px] items-center justify-center gap-4 text-xl font-extrabold after:gap-1 lg:min-w-[236px] lg:after:content-['TaskFlow']">
+			<div className="flex min-w-[115px] items-center justify-center gap-4 text-xl font-extrabold lg:min-w-[236px] lg:after:gap-1 lg:after:content-['TaskFlow']">
 				<Logo />
 			</div>
 			<div className="flex w-full items-center border-l border-border">

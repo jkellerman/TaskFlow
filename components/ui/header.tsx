@@ -13,7 +13,7 @@ export default function Header() {
 					<h1 className="w-2/4 truncate font-bold tracking-wide sm:w-4/5 sm:text-2xl">Platform Launch</h1>
 					<div className="flex items-center gap-4 sm:gap-8">
 						<span className="text-text">
-							<Icons icon="Gear" width={20} height={22} />
+							<Icons icon="Gear" className="h-[22px] w-5" />
 						</span>
 						<Avatar />
 					</div>

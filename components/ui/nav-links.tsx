@@ -21,41 +21,31 @@ export default function NavLinks({ isExpanded }: NavLinksProps) {
 	const pathname = usePathname();
 
 	return (
-		<ul className=" flex w-full flex-col items-center ">
-			{Links.map((link, i) => (
-				<li
-					key={i}
-					className={clsx("relative w-full ", {
-						"lg:bg-primary": pathname === link.href,
-						"lg:hover:bg-secondary-darker lg:hover:transition lg:dark:hover:bg-secondary lg:hover:[&>a]:text-primary lg:dark:hover:[&>a]:text-primary":
-							pathname !== link.href,
-					})}
-				>
-					{isExpanded && (
+		<nav>
+			<ul className="text-text">
+				{Links.map((link, i) => (
+					<li
+						key={i}
+						className={clsx(`relative mb-4 flex items-center rounded-md`, {
+							"bg-secondary-medium text-primary dark:bg-tertiary-medium dark:text-white": pathname === link.href,
+							"hover:bg-secondary hover:text-primary dark:hover:bg-tertiary-lighter dark:hover:text-white":
+								pathname !== link.href,
+						})}
+					>
 						<Link
 							href={link.href}
-							className={clsx(
-								" flex w-full items-center justify-center py-4 text-xl font-bold text-text transition  lg:justify-start lg:gap-4 lg:pl-8",
-								{
-									" text-white": pathname === link.href,
-								}
-							)}
+							className="flex items-center gap-x-3 px-4 py-2 after:absolute after:h-full after:w-full after:content-['']"
 						>
-							<span>
-								<Icons
-									icon={link.icon}
-									className={clsx({
-										" h-6 w-6": link.icon === "Dashboard",
-										" h-[25px] w-[25px]": link.icon === "Board",
-										" h-[13px] w-[26px]": link.icon === "Analytics",
-									})}
-								/>
+							<Icons icon={link.icon} className="h-6 w-6" />
+							<span
+								className={`text-tertiary-dark origin-left  font-medium transition-transform duration-500  ${!isExpanded && "scale-0"}`}
+							>
+								{link.name}
 							</span>
-							<span className="hidden lg:inline-block">{link.name}</span>
 						</Link>
-					)}
-				</li>
-			))}
-		</ul>
+					</li>
+				))}
+			</ul>
+		</nav>
 	);
 }

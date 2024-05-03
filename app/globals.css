@@ -39,10 +39,12 @@
 		--secondary: 219 63% 98%;
 		--secondary-lighter: 219 60% 98%;
 		--secondary-darker: 228 88% 81%;
+		--secondary-medium: 219 65% 94%;
 
 		--tertiary: 240 14% 8%;
 		--tertiary-lighter: 240 7% 15%;
 		--tertiary-darker: 240 22% 5%;
+		--tertiary-medium: 240 7% 12%;
 
 		--text-color: 225 4% 45%;
 	}
@@ -77,6 +79,7 @@
 
 @layer base {
 	body {
+		/* @apply transition-colors duration-500; */
 		@apply bg-background;
 	}
 }

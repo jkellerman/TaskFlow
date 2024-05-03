@@ -5,32 +5,42 @@ import { useState } from "react";
 import clsx from "clsx";
 
 import Icons from "./icons";
+import Logo from "./logo";
 import NavLinks from "./nav-links";
 
 export default function SideNav() {
-	const [isExpanded, setIsExpanded] = useState(true);
+	const [isExpanded, setIsExpanded] = useState(false);
 
 	const handleClick = () => {
 		setIsExpanded((prev) => !prev);
 	};
 	return (
-		<>
+		<div
+			className={`relative h-screen border-r border-border bg-white p-7 pt-9 transition-width duration-500 dark:bg-tertiary-darker ${isExpanded ? "w-60" : " w-[115px]"}`}
+		>
 			<button
 				onClick={handleClick}
-				className="absolute left-[100px] top-8 flex min-h-[30px] min-w-[30px] items-center justify-center rounded-full border border-text bg-background text-white hover:border-primary hover:bg-secondary-darker hover:transition dark:hover:bg-tertiary-lighter lg:left-[220px]"
+				className={clsx(
+					"absolute -right-4 top-9 hidden h-[30px] w-[30px] items-center justify-center rounded-full border border-secondary-darker bg-secondary-medium hover:border-primary hover:bg-secondary-darker hover:transition-colors dark:border-text dark:bg-tertiary-darker dark:hover:bg-tertiary-lighter lg:flex",
+					{
+						"rotate-180 transition-transform duration-500": !isExpanded,
+					}
+				)}
 			>
-				<Icons icon="ChevronLeft" className=" text-tertiary-darker dark:text-white" />
+				<Icons icon="ChevronLeft" />
 			</button>
-			<div
-				className={clsx("relative border-r border-border bg-background transition-all  lg:pt-12", {
-					"w-0 min-w-0 border-none": !isExpanded,
-					"w-[115px] min-w-[115px] lg:w-[236px] lg:min-w-[236px]": isExpanded,
-				})}
-			>
-				<div className="flex h-full flex-col items-center ">
-					<NavLinks isExpanded={isExpanded} />
+			<div className="mb-20 flex items-center gap-x-4">
+				<div className="pl-3">
+					<Logo className="h-9 w-9" />
 				</div>
+
+				<span
+					className={`text-tertiary-dark origin-left text-xl font-bold transition-transform duration-500 dark:text-white ${!isExpanded && "scale-0"}`}
+				>
+					TaskFlow
+				</span>
 			</div>
-		</>
+			<NavLinks isExpanded={isExpanded} />
+		</div>
 	);
 }

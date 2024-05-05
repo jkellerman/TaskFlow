@@ -7,11 +7,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div className="relative flex h-screen">
+		<div className="relative flex min-h-dvh">
 			<SideNav />
-			<div className="flex h-full flex-1 flex-col">
+			<div className="flex flex-1 flex-col">
 				<Header />
-				<main className="flex-1 bg-secondary-lighter dark:bg-tertiary">
+				<main className="h-full flex-1 bg-secondary-lighter dark:bg-tertiary">
 					<div className=" border-t border-border">{children}</div>
 				</main>
 			</div>

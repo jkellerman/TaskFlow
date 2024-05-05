@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import clsx from "clsx";
 
-import Icons from "./icons";
+import Icons from "../icons";
 
 interface NavLinksProps {
 	isExpanded: boolean;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Icons from "./ui/icons";
+import Icons from "./icons";
 
 interface ProjectsProps {
 	isExpanded: boolean;

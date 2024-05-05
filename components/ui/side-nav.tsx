@@ -5,9 +5,9 @@ import { useState } from "react";
 import * as Separator from "@radix-ui/react-separator";
 import clsx from "clsx";
 
+import Icons from "../icons";
 import Labels from "../labels";
 import Projects from "../projects";
-import Icons from "./icons";
 import Logo from "./logo";
 import NavLinks from "./nav-links";
 

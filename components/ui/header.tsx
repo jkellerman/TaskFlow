@@ -1,5 +1,5 @@
+import Icons from "../icons";
 import Avatar from "./avatar";
-import Icons from "./icons";
 import Logo from "./logo";
 
 export default function Header() {

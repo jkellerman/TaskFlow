@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import Icons from "./ui/icons";
+import Icons from "./icons";
 
 const labels = [{ name: "Development" }, { name: "UI Design" }, { name: "Testing" }, { name: "Research" }];
 

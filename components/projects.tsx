@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import Icons from "./icons";
+import { Button } from "./ui/button";
 
 interface ProjectsProps {
 	isExpanded: boolean;
@@ -18,24 +19,27 @@ export default function Projects({ isExpanded }: ProjectsProps) {
 						key={i}
 						className="relative flex items-center rounded-md transition-colors hover:text-tertiary-darker dark:hover:text-white"
 					>
-						<Link
-							href={`board/${project.name}`}
-							className="flex max-w-[190px] items-center gap-x-3 px-4 py-2 after:absolute after:h-full after:w-full after:content-['']"
-						>
-							<span className="min-h-6 min-w-6">
-								<Icons icon="Folder" className="h-6 w-6" />
-							</span>
-
-							<span
-								className={`text-tertiary-dark w-full origin-left  truncate font-medium capitalize transition-transform duration-500  dark:hover:text-white ${!isExpanded && "scale-0"}`}
+						<Button asChild variant="ghost" size="md">
+							<Link
+								href={`board/${project.name}`}
+								className="gap-x-3 after:absolute after:h-full after:w-full after:content-['']"
 							>
-								{project.name}
-							</span>
-						</Link>
+								<span className="min-h-6 min-w-6">
+									<Icons icon="Folder" className="h-6 w-6" />
+								</span>
+
+								<span
+									className={`text-tertiary-dark w-full origin-left  truncate font-medium capitalize 
+								transition-transform duration-500  dark:hover:text-white ${!isExpanded && "scale-0"}`}
+								>
+									{project.name}
+								</span>
+							</Link>
+						</Button>
 					</li>
 				))}
 			</ul>
-			<button className="flex max-w-[190px] items-center gap-x-3 px-4 py-2 hover:text-tertiary-darker dark:hover:text-white">
+			<Button className="gap-x-3 text-base" variant="ghost" size="md">
 				<span className="min-h-6 min-w-6">
 					<Icons icon="Plus" className=" h-6 w-6 " />
 				</span>
@@ -44,7 +48,7 @@ export default function Projects({ isExpanded }: ProjectsProps) {
 				>
 					Create New
 				</span>
-			</button>
+			</Button>
 		</>
 	);
 }

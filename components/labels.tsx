@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import Icons from "./icons";
+import { Button } from "./ui/button";
 
 const labels = [{ name: "Development" }, { name: "UI Design" }, { name: "Testing" }, { name: "Research" }];
 
@@ -29,7 +28,7 @@ export default function Labels({ isExpanded }: LabelsProps) {
 					</li>
 				))}
 			</ul>
-			<button className="flex max-w-[190px] items-center gap-x-3 px-4 py-2 hover:text-tertiary-darker dark:hover:text-white">
+			<Button className="gap-x-3" variant="ghost" size="md">
 				<span className="min-h-6 min-w-6">
 					<Icons icon="Plus" className="h-6 w-6" />
 				</span>
@@ -38,7 +37,7 @@ export default function Labels({ isExpanded }: LabelsProps) {
 				>
 					Create New
 				</span>
-			</button>
+			</Button>
 		</div>
 	);
 }

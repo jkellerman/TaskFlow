@@ -18,7 +18,7 @@ export default function SideNav() {
 		setIsExpanded((prev) => !prev);
 	};
 	return (
-		<div className="relative">
+		<div className="relative border-r border-border">
 			<button
 				onClick={handleClick}
 				className={clsx(
@@ -31,7 +31,7 @@ export default function SideNav() {
 				<Icons icon="ChevronLeft" />
 			</button>
 			<div
-				className={`relative border-r   border-border bg-white p-7 pt-9 transition-width duration-500 dark:bg-tertiary-darker ${isExpanded ? "w-60" : " w-[115px]"}`}
+				className={`relative  bg-white p-7 pt-9 transition-width duration-500 dark:bg-tertiary-darker ${isExpanded ? "w-60" : " w-[115px]"}`}
 			>
 				<div className="mb-10 flex items-center gap-x-4">
 					<div className="pl-3 ">

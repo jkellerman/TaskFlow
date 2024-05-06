@@ -9,6 +9,13 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			backgroundSize: {
+				"size-200": "200% 200%",
+			},
+			backgroundPosition: {
+				"pos-0": "0% 0%",
+				"pos-100": "100% 100%",
+			},
 			colors: {
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
@@ -17,6 +24,8 @@ module.exports = {
 				text: "hsl(var(--text-color))",
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
+					lighter: "hsl(var(--primary-lighter))",
+					darker: "hsl(var(--primary-darker))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
 				secondary: {
@@ -52,9 +61,9 @@ module.exports = {
 					border: "hsl(var(--past-date-border))",
 				},
 			},
-
 			transitionProperty: {
 				width: "width",
+				"background-position": "background-position",
 			},
 		},
 	},

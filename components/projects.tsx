@@ -17,7 +17,7 @@ export default function Projects({ isExpanded }: ProjectsProps) {
 				{projects.map((project, i) => (
 					<li
 						key={i}
-						className="relative flex items-center rounded-md transition-colors hover:text-tertiary-darker dark:hover:text-white"
+						className="relative flex items-center rounded-md hover:text-tertiary-darker hover:transition-colors dark:hover:text-white"
 					>
 						<Button asChild variant="ghost" size="md">
 							<Link

@@ -18,11 +18,11 @@ export default function SideNav() {
 		setIsExpanded((prev) => !prev);
 	};
 	return (
-		<div className="relative border-r border-border">
+		<div className="relative border-r border-border bg-white transition-colors dark:bg-tertiary-darker">
 			<button
 				onClick={handleClick}
 				className={clsx(
-					"absolute -right-4 top-9 z-10 hidden h-[30px] w-[30px] items-center justify-center rounded-full border border-secondary-darker bg-secondary-medium hover:border-primary hover:bg-secondary-darker hover:text-tertiary-darker hover:transition-colors dark:border-text dark:bg-tertiary-darker dark:hover:bg-tertiary-lighter dark:hover:text-white lg:flex",
+					"absolute -right-4 top-9 z-10 hidden h-[30px] w-[30px] items-center justify-center rounded-full border border-secondary-darker bg-secondary-medium transition-colors hover:border-primary hover:bg-secondary-darker hover:text-tertiary-darker hover:transition-colors dark:border-text dark:bg-tertiary-darker dark:hover:bg-tertiary-lighter dark:hover:text-white lg:flex",
 					{
 						"rotate-180 transition-transform duration-500": !isExpanded,
 					}
@@ -30,9 +30,7 @@ export default function SideNav() {
 			>
 				<Icons icon="ChevronLeft" />
 			</button>
-			<div
-				className={`relative  bg-white p-7 pt-9 transition-width duration-500 dark:bg-tertiary-darker ${isExpanded ? "w-60" : " w-[115px]"}`}
-			>
+			<div className={`relative  p-7 pt-9 transition-width duration-500  ${isExpanded ? "w-60" : " w-[115px]"}`}>
 				<div className="mb-10 flex items-center gap-x-4">
 					<div className="pl-3 ">
 						<Logo className="h-9 w-9" />
@@ -45,9 +43,17 @@ export default function SideNav() {
 					</span>
 				</div>
 				<NavLinks isExpanded={isExpanded} />
-				<Separator.Root decorative orientation="horizontal" className="my-8 h-[1px] w-full bg-border" />
+				<Separator.Root
+					decorative
+					orientation="horizontal"
+					className="my-8 h-[1px] w-full bg-border transition-colors"
+				/>
 				<Projects isExpanded={isExpanded} />
-				<Separator.Root decorative orientation="horizontal" className="my-8 h-[1px] w-full bg-border" />
+				<Separator.Root
+					decorative
+					orientation="horizontal"
+					className="my-8 h-[1px] w-full bg-border transition-colors"
+				/>
 				<Labels isExpanded={isExpanded} />
 			</div>
 		</div>

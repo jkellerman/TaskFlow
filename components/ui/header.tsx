@@ -1,12 +1,11 @@
 import Icons from "../icons";
 import Avatar from "./avatar";
-import Logo from "./logo";
 
 export default function Header() {
 	return (
 		<header className="flex">
 			<div className="flex w-full items-center ">
-				<div className="flex w-full items-center justify-between py-7 pl-8 pr-6 dark:bg-tertiary">
+				<div className="flex w-full items-center justify-between bg-white py-7 pl-8 pr-6  transition-colors dark:bg-tertiary">
 					<h1 className="w-2/4 truncate font-bold tracking-wide text-tertiary-darker dark:text-white sm:w-4/5 sm:text-2xl">
 						Platform Launch
 					</h1>

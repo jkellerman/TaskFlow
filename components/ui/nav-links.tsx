@@ -27,9 +27,9 @@ export default function NavLinks({ isExpanded }: NavLinksProps) {
 					<li
 						key={i}
 						className={clsx(`relative mb-4 flex items-center rounded-md`, {
-							"border-t border-primary-lighter bg-primary text-primary-foreground dark:border-tertiary-lighter dark:bg-tertiary-medium dark:text-white":
+							"border-t border-primary-lighter bg-primary text-primary-foreground transition-colors dark:border-tertiary-lighter dark:bg-tertiary-medium dark:text-white":
 								pathname === link.href,
-							"border-t border-transparent transition-colors duration-300 hover:bg-secondary-medium hover:text-primary dark:hover:bg-tertiary-lighter dark:hover:text-white":
+							"border-t border-transparent hover:bg-secondary-medium hover:text-primary hover:transition-colors hover:duration-300 dark:hover:bg-tertiary-lighter dark:hover:text-white":
 								pathname !== link.href,
 						})}
 					>
@@ -39,7 +39,7 @@ export default function NavLinks({ isExpanded }: NavLinksProps) {
 						>
 							<Icons icon={link.icon} className="h-6 w-6" />
 							<span
-								className={`text-tertiary-dark origin-left  font-medium transition-transform duration-500  ${!isExpanded && "scale-0"}`}
+								className={`text-tertiary-dark origin-left font-medium transition-transform duration-500  ${!isExpanded && "scale-0"}`}
 							>
 								{link.name}
 							</span>

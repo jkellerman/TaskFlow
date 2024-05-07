@@ -74,13 +74,6 @@
 	}
 }
 
-@layer base {
-	body {
-		/* @apply transition-colors duration-500; */
-		@apply bg-background;
-	}
-}
-
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;

@@ -11,8 +11,8 @@ export default function RootLayout({
 			<SideNav />
 			<div className="flex flex-1 flex-col">
 				<Header />
-				<main className="h-full flex-1 bg-secondary-lighter dark:bg-tertiary">
-					<div className=" border-t border-border">{children}</div>
+				<main className="h-full flex-1 bg-secondary-lighter transition-colors dark:bg-tertiary">
+					<div className=" border-t border-border transition-colors">{children}</div>
 				</main>
 			</div>
 		</div>

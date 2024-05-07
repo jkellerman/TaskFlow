@@ -27,8 +27,9 @@ export default function NavLinks({ isExpanded }: NavLinksProps) {
 					<li
 						key={i}
 						className={clsx(`relative mb-4 flex items-center rounded-md`, {
-							"bg-secondary-medium text-primary dark:bg-tertiary-medium dark:text-white": pathname === link.href,
-							"hover:bg-secondary hover:text-primary dark:hover:bg-tertiary-lighter dark:hover:text-white":
+							"border-t border-primary-lighter bg-primary text-primary-foreground dark:border-tertiary-lighter dark:bg-tertiary-medium dark:text-white":
+								pathname === link.href,
+							"border-t border-transparent transition-colors duration-300 hover:bg-secondary-medium hover:text-primary dark:hover:bg-tertiary-lighter dark:hover:text-white":
 								pathname !== link.href,
 						})}
 					>

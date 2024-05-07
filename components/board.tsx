@@ -3,7 +3,7 @@ import BoardTabs from "./ui/tabs";
 
 export default function Board() {
 	return (
-		<div className="flex p-8 pr-0 transition-colors sm:pr-14">
+		<div className="flex px-4 py-4 pr-0 transition-colors sm:px-8 sm:py-8 sm:pr-14">
 			<div className="flex w-full justify-between">
 				<BoardTabs />
 				<div className="flex">

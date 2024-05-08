@@ -1,5 +1,5 @@
 import Icons from "../icons";
-import Avatar from "./avatar";
+import Avatar from "../ui/avatar";
 
 export default function Header() {
 	return (

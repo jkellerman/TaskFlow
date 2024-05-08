@@ -1,5 +1,5 @@
-import Icons from "./icons";
-import { Button } from "./ui/button";
+import Icons from "../icons";
+import { Button } from "../ui/button";
 
 const labels = [{ name: "Development" }, { name: "UI Design" }, { name: "Testing" }, { name: "Research" }];
 

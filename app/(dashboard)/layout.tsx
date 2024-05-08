@@ -1,5 +1,5 @@
-import Header from "@/components/ui/header";
-import SideNav from "@/components/ui/side-nav";
+import Header from "@/components/header";
+import SideNav from "@/components/sidebar";
 
 export default function RootLayout({
 	children,

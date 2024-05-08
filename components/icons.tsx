@@ -18,8 +18,6 @@ interface IconsProps {
 		| "Refresh"
 		| "Search"
 		| "Sort";
-	width?: number;
-	height?: number;
 	className?: string;
 }
 

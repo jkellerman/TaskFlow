@@ -1,5 +1,5 @@
-import Icons from "./icons";
-import BoardTabs from "./ui/tabs";
+import Icons from "../icons";
+import BoardTabs from "./tabs";
 
 export default function Board() {
 	return (

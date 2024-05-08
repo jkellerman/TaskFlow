@@ -1,7 +1,7 @@
 import Board from "@/components/board";
 import Icons from "@/components/icons";
+import Search from "@/components/search";
 import { Button } from "@/components/ui/button";
-import Search from "@/components/ui/search";
 
 export default function Page() {
 	return (

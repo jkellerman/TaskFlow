@@ -6,10 +6,10 @@ import * as Separator from "@radix-ui/react-separator";
 import clsx from "clsx";
 
 import Icons from "../icons";
-import Labels from "../labels";
-import Projects from "../projects";
-import Logo from "./logo";
+import Logo from "../logo";
+import Labels from "./labels";
 import NavLinks from "./nav-links";
+import Projects from "./projects";
 
 export default function SideNav() {
 	const [isExpanded, setIsExpanded] = useState(false);

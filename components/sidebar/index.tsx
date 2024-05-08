@@ -32,7 +32,7 @@ export default function SideNav() {
 			</button>
 			<div className={`relative  p-7 pt-9 transition-width duration-500  ${isExpanded ? "w-60" : " w-[115px]"}`}>
 				<div className="mb-10 flex items-center gap-x-4">
-					<div className="pl-3 ">
+					<div className="pl-3 text-tertiary-darker dark:text-white">
 						<Logo className="h-9 w-9" />
 					</div>
 

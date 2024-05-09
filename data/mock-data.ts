@@ -5,9 +5,9 @@ export const generateMockData = () => {
 		boards: [
 			{
 				name: "Platform Launch",
-				columns: [
+				status: [
 					{
-						color: "43D6F6",
+						color: "#43D6F6",
 						name: "Todo",
 						tasks: [
 							{
@@ -61,7 +61,7 @@ export const generateMockData = () => {
 						],
 					},
 					{
-						color: "A78BF4",
+						color: "#A78BF4",
 						name: "Doing",
 						tasks: [
 							{
@@ -105,7 +105,7 @@ export const generateMockData = () => {
 						],
 					},
 					{
-						color: "FFBE3E",
+						color: "#FFBE3E",
 						name: "In Review",
 						tasks: [
 							{
@@ -151,7 +151,7 @@ export const generateMockData = () => {
 						],
 					},
 					{
-						color: "9CE44A",
+						color: "#9CE44A",
 						name: "Done",
 						tasks: [
 							{

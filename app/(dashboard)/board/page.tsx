@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function Page() {
 	return (
 		<>
-			<div className="flex items-center justify-between gap-2 border-b border-border bg-white px-4 py-5 transition-colors dark:bg-tertiary sm:gap-0 sm:px-8">
+			<div className="flex items-center justify-between gap-2 border-t border-border bg-white px-4 py-5 transition-colors dark:bg-tertiary sm:gap-0 sm:px-8">
 				<Search />
 				<div className="flex items-center gap-2">
 					<Button className="gap-2 bg-size-200 py-3 sm:py-2">

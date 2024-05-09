@@ -9,6 +9,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			animation: {
+				fade: "fade 150ms ease-in-out",
+				scale: "scale 150ms ease-in-out",
+			},
 			backgroundSize: {
 				"size-200": "200% 200%",
 			},
@@ -64,6 +68,16 @@ module.exports = {
 			transitionProperty: {
 				width: "width",
 				"background-position": "background-position",
+			},
+			keyframes: {
+				fade: {
+					"0%": { opacity: "0" },
+					"100%": { opacity: "1" },
+				},
+				scale: {
+					"0%": { scale: "0" },
+					"100%": { scale: "1" },
+				},
 			},
 		},
 	},

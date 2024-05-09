@@ -40,7 +40,7 @@ export default function BoardTabs() {
 					</div>
 				</div>
 
-				<Tabs.Content value="tab1" className="flex overflow-auto px-8 py-4 ">
+				<Tabs.Content value="tab1" className="flex gap-x-8 overflow-auto px-8 py-4">
 					<Columns columns={columns} />
 				</Tabs.Content>
 

@@ -7,6 +7,7 @@ import { HexColorPicker } from "react-colorful";
 import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
+import Task from "./task";
 
 interface ColumnsProps {
 	columns: {
@@ -47,19 +48,19 @@ export default function Columns({ columns }: ColumnsProps) {
 
 	return (
 		<>
-			{columns.map((column, i) => (
-				<div key={i}>
-					<div className="mb-4 flex min-w-72 items-center rounded-[10px] border-2 border-border bg-white p-4 text-xs font-bold uppercase tracking-wider text-tertiary transition-colors dark:bg-tertiary-lighter dark:text-white">
+			{columns.map((column, index) => (
+				<div key={index}>
+					<div className="mb-4 flex min-w-72 items-center rounded-[10px] border-2 border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-lighter dark:text-white">
 						<Popover.Root>
 							<Popover.Trigger
 								className={"mr-3 h-4 w-4 rounded-full"}
-								style={{ backgroundColor: columnColors[i] }}
+								style={{ backgroundColor: columnColors[index] }}
 								aria-label="toggle color picker"
 							></Popover.Trigger>
 
 							<Popover.Portal>
-								<Popover.Content className=" animate-scale">
-									<HexColorPicker color={columnColors[i]} onChange={(color) => handleColorChange(color, i)} />
+								<Popover.Content className="animate-scale">
+									<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />
 								</Popover.Content>
 							</Popover.Portal>
 						</Popover.Root>
@@ -68,10 +69,25 @@ export default function Columns({ columns }: ColumnsProps) {
 							{column.name} ({column.tasks.length})
 						</span>
 					</div>
-					<button className="flex w-full items-center justify-center gap-2 rounded-md border-2 border-border bg-white py-3 text-center text-sm hover:text-tertiary-darker hover:transition-colors dark:border-dotted dark:bg-tertiary-lighter dark:hover:text-white">
+
+					<button className="mb-4 flex w-full items-center justify-center gap-2 rounded-[10px] border-2 border-dotted border-border bg-white py-3 text-center text-sm transition-colors hover:text-tertiary-darker hover:transition-colors dark:bg-tertiary-lighter dark:hover:text-white">
 						Add Task
 						<Icons icon="Plus" className="h-3 w-3" />
 					</button>
+
+					<div className="flex flex-col">
+						{column.tasks.map((task, i) => (
+							<Task
+								key={i}
+								index={index}
+								title={task.title}
+								description={task.description}
+								subtasks={task.subtasks}
+								color={columnColors}
+								format="column"
+							/>
+						))}
+					</div>
 				</div>
 			))}
 

@@ -1,4 +1,3 @@
-import Icons from "../icons";
 import BoardTabs from "./tabs";
 
 export default function Board() {

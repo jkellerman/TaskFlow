@@ -10,7 +10,7 @@ module.exports = {
 	theme: {
 		extend: {
 			animation: {
-				fade: "fade 150ms ease-in-out",
+				fade: "fade 500ms ease-in-out",
 				scale: "scale 150ms ease-in-out",
 			},
 			backgroundSize: {
@@ -44,25 +44,31 @@ module.exports = {
 					darker: "hsl(var(--tertiary-darker))",
 					medium: "hsl(var(--tertiary-medium))",
 				},
-				today: {
-					DEFAULT: "hsl(var(--today-text))",
-					background: "hsl(var(--today-background))",
-					border: "hsl(var(--today-border))",
-				},
-				tomorrow: {
-					DEFAULT: "hsl(var(--tomorrow-text))",
-					background: "hsl(var(--tomorrow-background))",
-					border: "hsl(var(--tomorrow-border))",
-				},
-				"future-date": {
-					DEFAULT: "hsl(var(--future-date-text))",
-					background: "hsl(var(--future-date-background))",
-					border: "hsl(var(--future-date-border))",
-				},
-				"past-date": {
-					DEFAULT: "hsl(var(--past-date-text))",
-					background: "hsl(var(--past-date-background))",
-					border: "hsl(var(--past-date-border))",
+				label: {
+					DEFAULT: "hsl(var(--label-default))",
+					bg: "hsl(var(--label-default-bg))",
+					fg: "hsl(var(--label-default-fg))",
+					secondary: "hsl(var(--label-secondary))",
+					"secondary-bg": "hsl(var(--label-secondary-bg))",
+					"secondary-fg": "hsl(var(--label-secondary-fg))",
+					tertiary: "hsl(var(--label-tertiary))",
+					"tertiary-bg": "hsl(var(--label-tertiary-bg))",
+					"tertiary-fg": "hsl(var(--label-tertiary-fg))",
+					quaternary: "hsl(var(--label-quaternary))",
+					"quaternary-bg": "hsl(var(--label-quaternary-bg))",
+					"quaternary-fg": "hsl(var(--label-quaternary-fg))",
+					quinary: "hsl(var(--label-quinary))",
+					"quinary-bg": "hsl(var(--label-quinary-bg))",
+					"quinary-fg": "hsl(var(--label-quinary-fg))",
+					senary: "hsl(var(--label-senary))",
+					"senary-bg": "hsl(var(--label-senary-bg))",
+					"senary-fg": "hsl(var(--label-senary-fg))",
+					septenary: "hsl(var(--label-septenary))",
+					"septenary-bg": "hsl(var(--label-septenary-bg))",
+					"septenary-fg": "hsl(var(--label-septenary-fg))",
+					octonary: "hsl(var(--label-octonary))",
+					"octonary-bg": "hsl(var(--label-octonary-bg))",
+					"octonary-fg": "hsl(var(--label-octonary-fg))",
 				},
 			},
 			transitionProperty: {

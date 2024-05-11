@@ -21,7 +21,7 @@ export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color,
 	}, [numOfCompletedSubTasks, numOfSubTasks]);
 	return (
 		<>
-			<div className=" rounded-[10px] border border-border bg-secondary-lighter px-3 py-2 text-xs dark:bg-tertiary-medium">
+			<div className=" rounded-[10px] border border-border bg-secondary-lighter px-3 py-2 text-xs transition-colors dark:bg-tertiary-medium">
 				<div className="mb-2 flex items-center justify-between">
 					<div className="flex items-center gap-x-2">
 						<Icons icon="List" className="h-4 w-4" />
@@ -30,7 +30,7 @@ export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color,
 					{numOfCompletedSubTasks}/{numOfSubTasks}
 				</div>
 				<ProgressBar.Root
-					className="h-[5px] w-full rounded-md bg-secondary-medium dark:bg-tertiary-lighter"
+					className="h-[5px] w-full rounded-md bg-secondary-medium transition-colors dark:bg-tertiary-lighter	"
 					value={numOfCompletedSubTasks}
 					max={numOfSubTasks}
 				>

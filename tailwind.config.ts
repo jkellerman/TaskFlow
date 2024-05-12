@@ -10,6 +10,7 @@ module.exports = {
 	theme: {
 		extend: {
 			animation: {
+				enter: "enter 150ms cubic-bezier(0, 0, 0.2, 1)",
 				fade: "fade 500ms ease-in-out",
 				scale: "scale 150ms ease-in-out",
 			},
@@ -76,6 +77,10 @@ module.exports = {
 				"background-position": "background-position",
 			},
 			keyframes: {
+				enter: {
+					"0%": { opacity: "0", transform: "translateX(-10px)" },
+					"100%": { opacity: "1", transform: "translateX(0)" },
+				},
 				fade: {
 					"0%": { opacity: "0" },
 					"100%": { opacity: "1" },

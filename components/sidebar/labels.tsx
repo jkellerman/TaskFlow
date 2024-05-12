@@ -1,3 +1,4 @@
+import { Tooltip, TooltipArrow, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import clsx from "clsx";
 
 import Icons from "../icons";
@@ -14,18 +15,14 @@ const boardLabels = [
 	{ name: "anon", color: "octonary" },
 ];
 
-interface LabelsProps {
-	isExpanded: boolean;
-}
-
-export default function Labels({ isExpanded }: LabelsProps) {
+export default function Labels() {
 	return (
 		<div>
 			<h2 className=" mb-2 whitespace-nowrap pl-[6px] text-sm">Labels</h2>
 			<ul>
 				{boardLabels.map((label, i) => (
-					<li key={i} className="flex items-center ">
-						<div className="flex max-w-[190px] items-center gap-x-3 px-4 py-2">
+					<li key={i}>
+						<div className="max-w-[190px] items-center px-4 py-2">
 							<span
 								className={clsx(" min-h-6 min-w-6 ", {
 									"text-label-fg": !label.color || label.color === "default",
@@ -40,26 +37,24 @@ export default function Labels({ isExpanded }: LabelsProps) {
 							>
 								<Icons icon="Dot" className="h-6 w-6" />
 							</span>
-
-							<span
-								className={`text-tertiary-dark w-full origin-left truncate font-medium capitalize transition-transform duration-500  ${!isExpanded && "scale-0"}`}
-							>
-								{label.name}
-							</span>
 						</div>
 					</li>
 				))}
 			</ul>
-			<Button className="gap-x-3" variant="ghost" size="md">
-				<span className="min-h-6 min-w-6">
-					<Icons icon="Plus" className="h-6 w-6" />
-				</span>
-				<span
-					className={`text-tertiary-dark origin-left truncate  font-medium transition-transform duration-500  ${!isExpanded && "scale-0"}`}
-				>
-					Create New
-				</span>
-			</Button>
+			<TooltipProvider>
+				<Tooltip delayDuration={700}>
+					<TooltipTrigger asChild>
+						<Button className="text-base" variant="ghost" size="md">
+							<Icons icon="Plus" className=" h-6 w-6 " />
+						</Button>
+					</TooltipTrigger>
+
+					<TooltipContent className="rounded-md bg-tertiary-darker p-2 text-xs text-white dark:bg-white dark:text-tertiary-lighter">
+						Create new label
+						<TooltipArrow className=" fill-tertiary-darker dark:fill-white" />
+					</TooltipContent>
+				</Tooltip>
+			</TooltipProvider>
 		</div>
 	);
 }

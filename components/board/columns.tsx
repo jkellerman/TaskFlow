@@ -7,7 +7,7 @@ import { HexColorPicker } from "react-colorful";
 import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
-import Task from "./task";
+import Task from "../task";
 
 interface ColumnsProps {
 	columns: {
@@ -50,7 +50,7 @@ export default function Columns({ columns }: ColumnsProps) {
 		<>
 			{columns.map((column, index) => (
 				<div key={index}>
-					<div className="mb-4 flex min-w-72 items-center rounded-[10px] border-2 border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-lighter dark:text-white">
+					<div className="mb-4 flex w-80 items-center rounded-[10px] border border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-medium dark:text-white">
 						<Popover.Root>
 							<Popover.Trigger
 								className={"mr-3 h-4 w-4 rounded-full"}
@@ -70,7 +70,7 @@ export default function Columns({ columns }: ColumnsProps) {
 						</span>
 					</div>
 
-					<button className="mb-4 flex w-full items-center justify-center gap-2 rounded-[10px] border-2 border-dotted border-border bg-white py-3 text-center text-sm transition-colors hover:text-tertiary-darker hover:transition-colors dark:bg-tertiary-lighter dark:hover:text-white">
+					<button className="mb-4 flex w-full items-center justify-center gap-2 rounded-[10px] border-2 border-dotted border-border bg-white py-3 text-center text-sm transition-colors hover:text-tertiary-darker hover:transition-colors dark:bg-tertiary-medium dark:hover:text-white">
 						Add Task
 						<Icons icon="Plus" className="h-3 w-3" />
 					</button>
@@ -85,15 +85,16 @@ export default function Columns({ columns }: ColumnsProps) {
 								subtasks={task.subtasks}
 								color={columnColors}
 								format="column"
+								labels={task.labels}
 							/>
 						))}
 					</div>
 				</div>
 			))}
 
-			<button className="hover: inline-flex max-h-14 items-center gap-2 whitespace-nowrap rounded-[10px] bg-secondary-darker px-8 text-white transition-colors hover:bg-secondary-darker/85 hover:text-white hover:transition-colors dark:bg-tertiary-medium dark:hover:bg-tertiary-lighter">
+			<button className="hover: inline-flex max-h-14 items-center gap-2 whitespace-nowrap rounded-[10px] bg-secondary-darker px-8 text-sm text-white transition-colors hover:bg-secondary-darker/85 hover:text-white hover:transition-colors dark:bg-tertiary-medium dark:hover:bg-tertiary-lighter">
 				<Icons icon="Plus" className="h-6 w-6" />
-				Add new Column
+				Add new column
 			</button>
 		</>
 	);

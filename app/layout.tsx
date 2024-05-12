@@ -19,7 +19,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${jakarta.className} bg-white text-text antialiased transition-colors dark:bg-tertiary-darker`}>
+			<body
+				className={`${jakarta.className} h-full bg-white text-text antialiased transition-colors dark:bg-tertiary-darker`}
+			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					{children}
 				</ThemeProvider>

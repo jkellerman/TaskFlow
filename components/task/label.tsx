@@ -45,7 +45,3 @@ export default function Label({ label }: LabelProps) {
 		</>
 	);
 }
-
-// className={clsx("bg-label-bg text-label-fg border-label mb-2 inline-flex items-center rounded-2xl border py-1 pl-2 pr-4 text-xs font-medium capitalize  transition-colors dark:text-text  dark:drop-shadow-md", {
-// 	"bg-label-bg" :
-// })}

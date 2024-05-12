@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 
-import * as Popover from "@radix-ui/react-popover";
 import { HexColorPicker } from "react-colorful";
 import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
 import Task from "../task";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 interface ColumnsProps {
 	columns: {
@@ -51,19 +51,17 @@ export default function Columns({ columns }: ColumnsProps) {
 			{columns.map((column, index) => (
 				<div key={index}>
 					<div className="mb-4 flex w-80 items-center rounded-[10px] border border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-medium dark:text-white">
-						<Popover.Root>
-							<Popover.Trigger
+						<Popover>
+							<PopoverTrigger
 								className={"mr-3 h-4 w-4 rounded-full"}
 								style={{ backgroundColor: columnColors[index] }}
 								aria-label="toggle color picker"
-							></Popover.Trigger>
+							></PopoverTrigger>
 
-							<Popover.Portal>
-								<Popover.Content className="animate-scale">
-									<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />
-								</Popover.Content>
-							</Popover.Portal>
-						</Popover.Root>
+							<PopoverContent className="animate-scale">
+								<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />
+							</PopoverContent>
+						</Popover>
 
 						<span>
 							{column.name} ({column.tasks.length})

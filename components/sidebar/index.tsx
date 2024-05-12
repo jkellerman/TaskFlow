@@ -1,8 +1,7 @@
 "use client";
 
-import * as Separator from "@radix-ui/react-separator";
-
 import Logo from "../logo";
+import { Separator } from "../ui/separator";
 import Labels from "./labels";
 import NavLinks from "./nav-links";
 import Projects from "./projects";
@@ -14,17 +13,9 @@ export default function SideNav() {
 				<Logo className="h-8 w-8" />
 			</div>
 			<NavLinks />
-			<Separator.Root
-				decorative
-				orientation="horizontal"
-				className="my-8 min-h-[1px] w-full bg-border transition-colors"
-			/>
+			<Separator decorative orientation="horizontal" />
 			<Projects />
-			<Separator.Root
-				decorative
-				orientation="horizontal"
-				className="my-8 min-h-[1px] w-full bg-border transition-colors"
-			/>
+			<Separator decorative orientation="horizontal" />
 			<Labels />
 		</div>
 	);

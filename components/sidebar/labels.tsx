@@ -12,7 +12,7 @@ const boardLabels = [
 	{ name: "marketing", color: "quinary" },
 	{ name: "sales", color: "senary" },
 	{ name: "devops", color: "septenary" },
-	{ name: "anon", color: "octonary" },
+	{ name: "ad hoc", color: "octonary" },
 ];
 
 export default function Labels() {

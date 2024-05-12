@@ -14,7 +14,7 @@ export const generateMockData = () => {
 								title: "Build UI for onboarding flow",
 								description: "",
 								"due date": today,
-								labels: ["development"],
+								labels: ["ui design"],
 								status: "Todo",
 								subtasks: [
 									{
@@ -32,10 +32,10 @@ export const generateMockData = () => {
 								],
 							},
 							{
-								title: "Build UI for search",
+								title: "Plan Product Hunt launch",
 								description: "",
 								"due date": tomorrow,
-								labels: ["development"],
+								labels: ["marketing"],
 								status: "Todo",
 								subtasks: [
 									{
@@ -158,7 +158,7 @@ export const generateMockData = () => {
 								title: "Create wireframe prototype",
 								description: "Create a greyscale clickable wireframe prototype to test our asssumptions so far.",
 								"due date": today,
-								labels: ["ui design"],
+								labels: ["development"],
 								status: "Done",
 								subtasks: [
 									{

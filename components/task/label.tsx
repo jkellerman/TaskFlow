@@ -13,7 +13,7 @@ const boardLabels = [
 	{ name: "marketing", color: "quinary" },
 	{ name: "sales", color: "senary" },
 	{ name: "devops", color: "septenary" },
-	{ name: "anon", color: "octonary" },
+	{ name: "ad hoc", color: "octonary" },
 ];
 
 export default function Label({ label }: LabelProps) {
@@ -24,7 +24,7 @@ export default function Label({ label }: LabelProps) {
 				<span
 					key={i}
 					className={clsx(
-						" mb-2 inline-flex items-center rounded-2xl border border-label py-1 pl-2 pr-4 text-xs font-medium capitalize transition-colors dark:drop-shadow-md",
+						"  inline-flex items-center rounded-2xl border border-label py-1 pl-2 pr-4 text-xs font-medium capitalize transition-colors dark:drop-shadow-md",
 						{
 							"border-label bg-label-bg text-label-fg": !labelColor?.color || labelColor?.color === "default",
 							"border-label-secondary bg-label-secondary-bg text-label-secondary-fg": labelColor?.color === "secondary",

@@ -51,21 +51,28 @@ export default function Columns({ columns }: ColumnsProps) {
 			{columns.map((column, index) => (
 				<div key={index}>
 					<div className="mb-4 flex w-80 items-center rounded-[10px] border border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-medium dark:text-white">
-						<Popover>
-							<PopoverTrigger
-								className={"mr-3 h-4 w-4 rounded-full"}
-								style={{ backgroundColor: columnColors[index] }}
-								aria-label="toggle color picker"
-							></PopoverTrigger>
+						<div className="flex w-full items-center justify-between">
+							<div className="flex items-center">
+								<Popover>
+									<PopoverTrigger
+										className={"mr-3 h-4 w-4 rounded-full"}
+										style={{ backgroundColor: columnColors[index] }}
+										aria-label="toggle color picker"
+									></PopoverTrigger>
 
-							<PopoverContent className="animate-scale">
-								<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />
-							</PopoverContent>
-						</Popover>
+									<PopoverContent className="animate-scale">
+										<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />
+									</PopoverContent>
+								</Popover>
 
-						<span>
-							{column.name} ({column.tasks.length})
-						</span>
+								<span>
+									{column.name} ({column.tasks.length})
+								</span>
+							</div>
+							<span className="text-text hover:text-tertiary-darker dark:transition-colors dark:hover:text-white">
+								<Icons icon="Ellipsis" className="h-6 w-6 " />
+							</span>
+						</div>
 					</div>
 
 					<button className="mb-4 flex w-full items-center justify-center gap-2 rounded-[10px] border-2 border-dotted border-border bg-white py-3 text-center text-sm transition-colors hover:text-tertiary-darker hover:transition-colors dark:bg-tertiary-medium dark:hover:text-white">
@@ -84,6 +91,7 @@ export default function Columns({ columns }: ColumnsProps) {
 								color={columnColors}
 								format="column"
 								labels={task.labels}
+								dueDate={task["due date"]}
 							/>
 						))}
 					</div>

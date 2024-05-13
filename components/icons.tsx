@@ -5,7 +5,7 @@ interface IconsProps {
 		| "Calendar"
 		| "Check"
 		| "ChevronDown"
-		| "ChevronLeft"
+		| "ChevronRight"
 		| "Cross"
 		| "Dashboard"
 		| "Dot"
@@ -65,14 +65,14 @@ export default function Icons({ icon, className }: IconsProps) {
 			/>
 		</svg>
 	);
-	const ChevronLeft = (
-		<svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+	const ChevronRight = (
+		<svg className={className} width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path
-				d="M5.25 1L1 5.25L5.25 9.5"
+				d="M1 9.5L5.25 5.25L1 1"
 				stroke="currentColor"
-				strokeWidth="2"
-				strokeLinecap="round"
-				strokeLinejoin="round"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
 			/>
 		</svg>
 	);
@@ -211,8 +211,8 @@ export default function Icons({ icon, className }: IconsProps) {
 		case "ChevronDown":
 			return ChevronDown;
 			break;
-		case "ChevronLeft":
-			return ChevronLeft;
+		case "ChevronRight":
+			return ChevronRight;
 			break;
 		case "Cross":
 			return Cross;

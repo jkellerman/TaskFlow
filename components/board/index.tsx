@@ -4,6 +4,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { generateMockData } from "@/data/mock-data";
 
 import Icons from "../icons";
+import Task from "../task";
 import Columns from "./columns";
 
 const triggers = ["Board", "List"] as const;
@@ -11,11 +12,16 @@ const triggers = ["Board", "List"] as const;
 export default function Board() {
 	const data = generateMockData();
 	const columns = data.boards[0].status;
+	const taskList = columns.flatMap((tasks) => {
+		const color = tasks.color;
+
+		return tasks.tasks.map((task) => {
+			return { ...task, color };
+		});
+	});
 
 	return (
 		<Tabs.Root className=" animate-fade  overflow-auto border-t border-border transition-colors" defaultValue="tab1">
-			{" "}
-			{/**board */}
 			<div className="flex items-center justify-between">
 				<Tabs.List className="flex gap-3 p-8 text-sm sm:gap-8 sm:text-base" aria-label="View tasks">
 					{triggers.map((trigger, i) => (
@@ -43,7 +49,24 @@ export default function Board() {
 			<Tabs.Content value="tab1" className="flex gap-x-8 overflow-auto px-8 py-4">
 				<Columns columns={columns} />
 			</Tabs.Content>
-			<Tabs.Content value="tab2">List</Tabs.Content>
+			<Tabs.Content value="tab2">
+				<ul className="-mt-4 flex flex-col  gap-y-4 px-8 pb-8">
+					{taskList.map((task, i) => (
+						<li key={i}>
+							<Task
+								format="list"
+								title={task.title}
+								description={task.description}
+								subtasks={task.subtasks}
+								color={task.color}
+								dueDate={task["due date"]}
+								labels={task.labels}
+								status={task.status}
+							/>
+						</li>
+					))}
+				</ul>
+			</Tabs.Content>
 		</Tabs.Root>
 	);
 }

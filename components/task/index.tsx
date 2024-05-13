@@ -5,14 +5,41 @@ import Label from "./label";
 import Progress from "./progress";
 
 interface TaskProps {
+	/**
+	 * To access color index in columnColors
+	 */
 	index?: number;
+	/**
+	 * Date for task completion
+	 */
 	dueDate: string;
+	/**
+	 * Select format for displaying task (based on tab selected (board or list))
+	 */
 	format: "column" | "list";
+	/**
+	 * Color selected for column, also used for color picker
+	 */
 	color: string[] | string;
+	/**
+	 * Title of task
+	 */
 	title: string;
+	/**
+	 * Task description
+	 */
 	description: string;
+	/**
+	 * Labels selected for task
+	 */
 	labels: string[];
+	/**
+	 * Which column currently assigned to, should be the same as the current column
+	 */
 	status?: string;
+	/**
+	 * list of subtasks
+	 */
 	subtasks: {
 		title: string;
 		isCompleted: boolean;

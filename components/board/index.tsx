@@ -46,10 +46,10 @@ export default function Board() {
 					</button>
 				</div>
 			</div>
-			<Tabs.Content value="tab1" className="flex gap-x-8 overflow-auto px-8 py-4">
+			<Tabs.Content value="tab1" className="flex gap-x-8 overflow-auto px-8 py-4 data-[state=active]:animate-fade">
 				<Columns columns={columns} />
 			</Tabs.Content>
-			<Tabs.Content value="tab2">
+			<Tabs.Content value="tab2" className="data-[state=active]:animate-fade">
 				<ul className="-mt-4 flex flex-col  gap-y-4 px-8 pb-8">
 					{taskList.map((task, i) => (
 						<li key={i}>

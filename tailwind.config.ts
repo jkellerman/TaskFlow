@@ -13,6 +13,7 @@ module.exports = {
 				enter: "enter 150ms cubic-bezier(0, 0, 0.2, 1)",
 				fade: "fade 500ms ease-in-out",
 				scale: "scale 150ms ease-in-out",
+				"content-show": "content-show 150ms cubic-bezier(0.16, 1, 0.3, 1)",
 			},
 			backgroundSize: {
 				"size-200": "200% 200%",
@@ -77,6 +78,10 @@ module.exports = {
 				"background-position": "background-position",
 			},
 			keyframes: {
+				"content-show": {
+					"0%": { opacity: "0", transform: "translate(-50%, -48%) scale(0.96)" },
+					"100%": { opacity: "1", transform: "translate(-50%, -50%) scale(1)" },
+				},
 				enter: {
 					"0%": { opacity: "0", transform: "translateX(-10px)" },
 					"100%": { opacity: "1", transform: "translateX(0)" },

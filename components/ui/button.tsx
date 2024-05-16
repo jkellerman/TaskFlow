@@ -12,13 +12,15 @@ import { VariantProps, cva } from "class-variance-authority";
 				</Button>
  */
 
-const buttonVariants = cva("inline-flex items-center rounded-md", {
+const buttonVariants = cva("inline-flex items-center justify-center rounded-md ", {
 	variants: {
 		variant: {
 			primary:
 				"bg-gradient-to-t from-primary-darker via-primary to-primary-darker  bg-pos-0 border-primary-lighter text-primary-foreground border-t transition-background-position duration-300 hover:bg-pos-100",
+			secondary:
+				"bg-primary text-white gap-2 dark:bg-white dark:text-tertiary-lighter hover:bg-primary-lighter dark:hover:bg-white/80 hover:transition-colors",
 			destructive: "bg-destructive text-white text-sm hover:bg-destructive/85 hover:transition-colors duration-300",
-			ghost: "max-w-[190px] hover:text-tertiary-darker dark:hover:text-white",
+			ghost: " hover:text-tertiary-darker dark:hover:text-white",
 		},
 		size: {
 			default: "px-5 py-2 text-sm",

@@ -114,7 +114,7 @@ export default function Task({
 					<div className="hidden items-center gap-4 xl:flex">
 						<span className="text-xs">{status}</span>
 						<span className="flex items-center gap-2 text-sm transition-colors">
-							<Icons icon="List" className="h-4 w-4" />
+							<Icons icon="CheckList" className="h-4 w-4" />
 							{numOfCompletedSubTasks}/{subtasks.length}
 						</span>
 					</div>

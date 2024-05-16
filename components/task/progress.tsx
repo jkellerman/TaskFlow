@@ -24,7 +24,7 @@ export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color,
 			<div className=" rounded-[10px] border border-border bg-secondary-lighter px-3 py-2 text-xs transition-colors dark:bg-tertiary-medium">
 				<div className="mb-2 flex items-center justify-between">
 					<div className="flex items-center gap-x-2">
-						<Icons icon="List" className="h-4 w-4" />
+						<Icons icon="CheckList" className="h-5 w-5" />
 						Sub tasks
 					</div>
 					{numOfCompletedSubTasks}/{numOfSubTasks}

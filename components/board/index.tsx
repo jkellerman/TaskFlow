@@ -18,7 +18,7 @@ export default function Board({ columns, taskList }: BoardProps) {
 	return (
 		<Tabs.Root className=" animate-fade  overflow-auto border-t border-border transition-colors" defaultValue="tab1">
 			<div className="flex items-center justify-between">
-				<Tabs.List className="flex gap-3 p-8 text-sm sm:gap-8 sm:text-base" aria-label="View tasks">
+				<Tabs.List className="flex gap-3 p-8 text-sm sm:gap-8 sm:text-base">
 					{triggers.map((trigger, i) => (
 						<Tabs.Trigger
 							key={i}
@@ -26,7 +26,7 @@ export default function Board({ columns, taskList }: BoardProps) {
 							className={`relative mr-3 flex items-center transition-opacity after:absolute after:left-4 after:top-8 ${trigger === "Board" ? `after:left-4 sm:after:left-[52px]` : `after:left-[6px] sm:after:left-10`} after:h-[2px] after:w-3 after:bg-tertiary-darker after:opacity-0 after:content-['']  hover:text-tertiary-darker hover:transition-colors data-[state=active]:text-tertiary-darker data-[state=active]:after:opacity-100 data-[state=active]:after:duration-700 dark:after:bg-white  dark:hover:text-white dark:data-[state=active]:text-white `}
 						>
 							<Icons icon={trigger} className="mr-2 hidden h-6 w-6 sm:inline-block" />
-							{trigger}
+							{trigger} <span className="sr-only">view tasks</span>
 						</Tabs.Trigger>
 					))}
 				</Tabs.List>

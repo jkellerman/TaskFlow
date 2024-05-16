@@ -42,11 +42,9 @@ const DialogContent = React.forwardRef<
 			{...props}
 		>
 			{children}
-			<DialogClose
-				aria-label="close"
-				className="absolute right-4 top-4 rounded-full p-2 text-primary opacity-70 ring-offset-primary/70 transition-opacity hover:bg-primary/40 hover:opacity-100 hover:transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:pointer-events-none dark:text-white dark:hover:bg-primary-lighter"
-			>
+			<DialogClose className="absolute right-4 top-4 rounded-full p-2 text-primary opacity-70 ring-offset-primary/70 transition-opacity hover:bg-primary/40 hover:opacity-100 hover:transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:pointer-events-none dark:text-white dark:hover:bg-primary-lighter">
 				<Icons icon="Cross" className="h-4 w-4" />
+				<span className="sr-only">close dialog</span>
 			</DialogClose>
 		</DialogPrimitive.Content>
 	</DialogPortal>

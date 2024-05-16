@@ -45,8 +45,9 @@ export default function Columns({ columns }: ColumnsProps) {
 									<PopoverTrigger
 										className={"mr-3 h-4 w-4 rounded-full"}
 										style={{ backgroundColor: columnColors[index] }}
-										aria-label="toggle color picker"
-									></PopoverTrigger>
+									>
+										<span className=" sr-only">color picker</span>
+									</PopoverTrigger>
 
 									<PopoverContent className="animate-scale">
 										<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />

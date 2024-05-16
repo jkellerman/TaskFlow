@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { Types } from "@/types";
+import Datepicker from "react-tailwindcss-datepicker";
 
 import Icons from "../icons";
 import { Button } from "../ui/button";
@@ -11,6 +12,11 @@ import { Form, FormControl, FormField, FormLabel, FormMessage, FormSubmit } from
 import { Input } from "../ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Textarea } from "../ui/textarea";
+
+interface DueDate {
+	startDate: Date | null;
+	endDate: Date | null;
+}
 
 interface CreateTaskFormProps {
 	columns: Types.Columns[];
@@ -39,13 +45,21 @@ export default function CreateTaskForm({
 	status,
 }: CreateTaskFormProps) {
 	const [subTasks, setSubTasks] = useState(subTasksList);
-
+	const [dueDate, setDueDate] = useState<DueDate>({
+		startDate: null,
+		endDate: null,
+	});
 	const addNewSubTask = () => {
 		setSubTasks((prev) => [...prev, `make another one`]);
 	};
 
 	const removeSubTask = (indexToRemove: number) => {
 		setSubTasks((prevSubTasks) => prevSubTasks.filter((_, index) => index !== indexToRemove));
+	};
+
+	const handleDateChange = (newDate: any) => {
+		console.log("newValue:", newDate);
+		setDueDate(newDate);
 	};
 
 	return (
@@ -125,6 +139,21 @@ export default function CreateTaskForm({
 									</FormControl>
 								</FormField>
 							)}
+							<FormField name="due date" className="w-full flex-1">
+								<FormLabel>Due Date</FormLabel>
+								<FormControl asChild>
+									<Datepicker
+										value={dueDate}
+										onChange={handleDateChange}
+										useRange={false}
+										asSingle={true}
+										displayFormat={"DD/MM/YYYY"}
+										primaryColor={"violet"}
+										inputClassName=" dark:bg-tertiary-lighter border border-border p-2 py-2 rounded-md text-sm text-tertiary-lighter dark:text-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+										popoverDirection="up"
+									/>
+								</FormControl>
+							</FormField>
 						</div>
 						<FormField name="subtasks" className="mb-0">
 							<FormLabel>subtasks</FormLabel>

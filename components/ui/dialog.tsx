@@ -36,15 +36,17 @@ const DialogContent = React.forwardRef<
 		<DialogPrimitive.Content
 			ref={ref}
 			className={cn(
-				"fixed left-1/2 top-1/2 max-h-[85vh] w-[90vw] max-w-[550px] -translate-x-1/2 -translate-y-1/2 transform animate-content-show rounded-md border border-border bg-white p-6 shadow-lg dark:bg-tertiary-lighter",
+				"fixed left-1/2 top-1/2 w-[90vw]  max-w-[550px] -translate-x-1/2 -translate-y-1/2 transform animate-content-show rounded-md border border-border bg-white p-6 shadow-lg dark:bg-tertiary-lighter",
 				className
 			)}
 			{...props}
 		>
 			{children}
-			<DialogClose className="absolute right-7 top-4 rounded-sm opacity-70 ring-offset-primary transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:pointer-events-none">
+			<DialogClose
+				aria-label="close"
+				className="absolute right-4 top-4 rounded-full p-2 text-primary opacity-70 ring-offset-primary/70 transition-opacity hover:bg-primary/40 hover:opacity-100 hover:transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 disabled:pointer-events-none dark:text-white dark:hover:bg-primary-lighter"
+			>
 				<Icons icon="Cross" className="h-4 w-4" />
-				<span className="sr-only">Close</span>
 			</DialogClose>
 		</DialogPrimitive.Content>
 	</DialogPortal>
@@ -57,7 +59,7 @@ const DialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<DialogPrimitive.Title
 		ref={ref}
-		className={cn("text-center text-lg font-semibold text-tertiary-lighter dark:text-white", className)}
+		className={cn("text-center text-lg font-bold text-tertiary-lighter dark:text-white", className)}
 		{...props}
 	/>
 ));

@@ -1,25 +1,20 @@
 "use client";
 
 import * as Tabs from "@radix-ui/react-tabs";
-import { generateMockData } from "@/data/mock-data";
+import { Types } from "@/types";
 
 import Icons from "../icons";
 import Task from "../task";
 import Columns from "./columns";
 
+interface BoardProps {
+	columns: Types.Columns[];
+	taskList: Types.TaskList[];
+}
+
 const triggers = ["Board", "List"] as const;
 
-export default function Board() {
-	const data = generateMockData();
-	const columns = data.boards[0].status;
-	const taskList = columns.flatMap((tasks) => {
-		const color = tasks.color;
-
-		return tasks.tasks.map((task) => {
-			return { ...task, color };
-		});
-	});
-
+export default function Board({ columns, taskList }: BoardProps) {
 	return (
 		<Tabs.Root className=" animate-fade  overflow-auto border-t border-border transition-colors" defaultValue="tab1">
 			<div className="flex items-center justify-between">
@@ -51,7 +46,7 @@ export default function Board() {
 			</Tabs.Content>
 			<Tabs.Content value="tab2" className="data-[state=active]:animate-fade">
 				<ul className="-mt-4 flex flex-col  gap-y-4 px-8 pb-8">
-					{taskList.map((task, i) => (
+					{taskList.map((task, i: number) => (
 						<li key={i}>
 							<Task
 								format="list"

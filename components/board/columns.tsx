@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { Types } from "@/types";
 import { HexColorPicker } from "react-colorful";
 import { useDebouncedCallback } from "use-debounce";
 
@@ -10,21 +11,7 @@ import Task from "../task";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 interface ColumnsProps {
-	columns: {
-		color: string;
-		name: string;
-		tasks: {
-			title: string;
-			description: string;
-			"due date": string;
-			labels: string[];
-			status: string;
-			subtasks: {
-				title: string;
-				isCompleted: boolean;
-			}[];
-		}[];
-	}[];
+	columns: Types.Columns[];
 }
 
 export default function Columns({ columns }: ColumnsProps) {

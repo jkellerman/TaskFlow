@@ -51,7 +51,13 @@ export default function Icons({ icon, className }: IconsProps) {
 	);
 	const Check = (
 		<svg className={className} viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M9 1.5L4 6.5L1.5 4" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+			<path
+				d="M9 1.5L4 6.5L1.5 4"
+				stroke="currentColor"
+				strokeWidth="2.5"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
 		</svg>
 	);
 	const ChevronDown = (

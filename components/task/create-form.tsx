@@ -14,6 +14,9 @@ import { Textarea } from "../ui/textarea";
 
 interface CreateTaskFormProps {
 	columns: Types.Columns[];
+	triggerText: string;
+	triggerVariant: "primary" | "secondary";
+	status?: string;
 }
 
 const boardLabels = [
@@ -29,7 +32,12 @@ const boardLabels = [
 
 const subTasksList = ["make a coffee", "drink coffee & smile"];
 
-export default function CreateTaskForm({ columns }: CreateTaskFormProps) {
+export default function CreateTaskForm({
+	columns,
+	triggerVariant = "primary",
+	triggerText,
+	status,
+}: CreateTaskFormProps) {
 	const [subTasks, setSubTasks] = useState(subTasksList);
 
 	const addNewSubTask = () => {
@@ -43,10 +51,17 @@ export default function CreateTaskForm({ columns }: CreateTaskFormProps) {
 	return (
 		<Dialog onOpenChange={(open) => !open && setSubTasks(subTasksList)}>
 			<DialogTrigger asChild>
-				<Button className="gap-2 bg-size-200 py-3 sm:py-2">
-					<span className="hidden sm:inline-block">Create Task</span>
-					<Icons icon="Plus" className=" h-3 w-3 hover:bg-pos-100" />
-				</Button>
+				{triggerVariant === "primary" ? (
+					<Button className="gap-2 bg-size-200 py-3 sm:py-2">
+						<span className="hidden sm:inline-block">{triggerText}</span>
+						<Icons icon="Plus" className=" h-3 w-3 hover:bg-pos-100" />
+					</Button>
+				) : (
+					<button className="mb-4 flex w-full items-center justify-center gap-2 rounded-[10px] border-2 border-dotted border-border bg-white py-3 text-center text-sm transition-colors hover:text-tertiary-darker hover:transition-colors dark:bg-tertiary-medium dark:hover:text-white">
+						{triggerText}
+						<Icons icon="Plus" className="h-3 w-3" />
+					</button>
+				)}
 			</DialogTrigger>
 			<DialogPortal>
 				<DialogContent>
@@ -77,7 +92,7 @@ export default function CreateTaskForm({ columns }: CreateTaskFormProps) {
 							<FormField name="status" className="w-full flex-1">
 								<FormLabel>status</FormLabel>
 								<FormControl asChild>
-									<Select defaultValue={columns[0].name}>
+									<Select defaultValue={status ? status : columns[0].name}>
 										<SelectTrigger>
 											<SelectValue placeholder="Select..." />
 										</SelectTrigger>

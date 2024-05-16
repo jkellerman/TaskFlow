@@ -8,6 +8,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
 import Task from "../task";
+import CreateTaskForm from "../task/create-form";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 interface ColumnsProps {
@@ -62,10 +63,7 @@ export default function Columns({ columns }: ColumnsProps) {
 						</div>
 					</div>
 
-					<button className="mb-4 flex w-full items-center justify-center gap-2 rounded-[10px] border-2 border-dotted border-border bg-white py-3 text-center text-sm transition-colors hover:text-tertiary-darker hover:transition-colors dark:bg-tertiary-medium dark:hover:text-white">
-						Add Task
-						<Icons icon="Plus" className="h-3 w-3" />
-					</button>
+					<CreateTaskForm columns={columns} triggerVariant="secondary" triggerText="Add Task" status={column.name} />
 
 					<div className="flex flex-col">
 						{column.tasks.map((task, i) => (

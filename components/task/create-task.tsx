@@ -56,8 +56,15 @@ export default function CreateTask({ columns, triggerVariant = "primary", trigge
 		setDueDate(newDate);
 	};
 
+	const onDialogOpenChange = (open: boolean) => {
+		if (!open) {
+			setSubTasks(subTasksList);
+			handleDateChange({ startDate: null, endDate: null });
+		}
+	};
+
 	return (
-		<Dialog onOpenChange={(open) => !open && setSubTasks(subTasksList)}>
+		<Dialog onOpenChange={onDialogOpenChange}>
 			<DialogTrigger asChild>
 				{triggerVariant === "primary" ? (
 					<Button className="gap-2 bg-size-200 py-3 sm:py-2">

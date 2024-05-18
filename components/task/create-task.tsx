@@ -58,7 +58,6 @@ export default function CreateTaskForm({
 	};
 
 	const handleDateChange = (newDate: any) => {
-		console.log("newValue:", newDate);
 		setDueDate(newDate);
 	};
 
@@ -92,9 +91,7 @@ export default function CreateTaskForm({
 							</FormControl>
 						</FormField>
 						<FormField name="description">
-							<FormLabel>
-								description <span className="ml-1 text-sm">(optional)</span>{" "}
-							</FormLabel>
+							<FormLabel>description</FormLabel>
 							<FormControl asChild>
 								<Textarea
 									placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
@@ -156,7 +153,7 @@ export default function CreateTaskForm({
 							</FormField>
 						</div>
 						<FormField name="subtasks" className="mb-0">
-							<FormLabel>subtasks</FormLabel>
+							<FormLabel>Sub Tasks</FormLabel>
 							{subTasks.map((subTask, i) => (
 								<div key={i} className="mb-2 flex items-center gap-2">
 									<FormControl asChild>

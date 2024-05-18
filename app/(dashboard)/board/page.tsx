@@ -1,7 +1,7 @@
 import Board from "@/components/board";
 import Icons from "@/components/icons";
 import Search from "@/components/search";
-import CreateTaskForm from "@/components/task/create-form";
+import CreateTask from "@/components/task/create-task";
 import { generateMockData } from "@/data/mock-data";
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
 			<div className="flex items-center justify-between gap-2 border-t border-border bg-white px-4 py-5 transition-colors dark:bg-tertiary sm:gap-0 sm:px-8">
 				<Search />
 				<div className="flex items-center gap-2">
-					<CreateTaskForm columns={columns} triggerVariant="primary" triggerText="Create Task" />
+					<CreateTask columns={columns} triggerVariant="primary" triggerText="Create Task" />
 					<button type="button" className="hover:text-tertiary-darker hover:transition-colors dark:hover:text-white">
 						<Icons icon="Ellipsis" className="h-6 w-6" />
 					</button>

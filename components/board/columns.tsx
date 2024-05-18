@@ -8,7 +8,7 @@ import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
 import Task from "../task";
-import CreateTaskForm from "../task/create-form";
+import CreateTask from "../task/create-task";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 interface ColumnsProps {
@@ -64,7 +64,7 @@ export default function Columns({ columns }: ColumnsProps) {
 						</div>
 					</div>
 
-					<CreateTaskForm columns={columns} triggerVariant="secondary" triggerText="Add Task" status={column.name} />
+					<CreateTask columns={columns} triggerVariant="secondary" triggerText="Add Task" status={column.name} />
 
 					<div className="flex flex-col">
 						{column.tasks.map((task, i) => (
@@ -78,6 +78,8 @@ export default function Columns({ columns }: ColumnsProps) {
 								format="column"
 								labels={task.labels}
 								dueDate={task["due date"]}
+								columns={columns}
+								status={task.status}
 							/>
 						))}
 					</div>

@@ -107,7 +107,11 @@ export default function EditTask({ title, description, subtasks, status, columns
 						<FormField name="description">
 							<FormLabel>description</FormLabel>
 							<FormControl asChild>
-								<Textarea defaultValue={description} maxLength={1000} />
+								<Textarea
+									placeholder="e.g. It’s always good to take a break. This 15 minute break will recharge the batteries a little."
+									defaultValue={description}
+									maxLength={1000}
+								/>
 							</FormControl>
 						</FormField>
 						<div className="flex w-full gap-4">

@@ -38,12 +38,7 @@ const boardLabels = [
 
 const subTasksList = ["make a coffee", "drink coffee & smile"];
 
-export default function CreateTaskForm({
-	columns,
-	triggerVariant = "primary",
-	triggerText,
-	status,
-}: CreateTaskFormProps) {
+export default function CreateTask({ columns, triggerVariant = "primary", triggerText, status }: CreateTaskFormProps) {
 	const [subTasks, setSubTasks] = useState(subTasksList);
 	const [dueDate, setDueDate] = useState<DueDate>({
 		startDate: null,

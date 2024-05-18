@@ -14,7 +14,7 @@ const DropdownMenuContent = React.forwardRef<
 		<DropdownMenuPrimitive.Portal>
 			<DropdownMenuPrimitive.Content
 				className={cn(
-					"rounded-md border border-border bg-white px-1 py-2 shadow-md dark:bg-tertiary-lighter",
+					" animate-enter-b rounded-md border border-border bg-white px-1 py-2 shadow-md dark:bg-tertiary-lighter",
 					className
 				)}
 				{...props}

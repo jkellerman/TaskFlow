@@ -27,7 +27,7 @@ export default function Projects() {
 								<TooltipContent
 									side="right"
 									sideOffset={4}
-									className="animate-enter rounded-md bg-tertiary-lighter px-4 py-1 capitalize text-white dark:bg-white dark:text-tertiary-darker"
+									className="animate-enter-l rounded-md bg-tertiary-lighter px-4 py-1 capitalize text-white dark:bg-white dark:text-tertiary-darker"
 								>
 									{project.name}
 								</TooltipContent>

@@ -1,6 +1,8 @@
 import { formatDate } from "@/lib/formatter";
+import { Types } from "@/types";
 
 import Icons from "../icons";
+import EditTask from "./edit-task";
 import Label from "./label";
 import Progress from "./progress";
 
@@ -22,6 +24,10 @@ interface TaskProps {
 	 */
 	color: string[] | string;
 	/**
+	 * Title and color theme for each column
+	 */
+	columns?: Types.Columns[];
+	/**
 	 * Title of task
 	 */
 	title: string;
@@ -36,7 +42,7 @@ interface TaskProps {
 	/**
 	 * Which column currently assigned to, should be the same as the current column
 	 */
-	status?: string;
+	status: string;
 	/**
 	 * list of subtasks
 	 */
@@ -56,6 +62,7 @@ export default function Task({
 	labels,
 	dueDate,
 	status,
+	columns,
 }: TaskProps) {
 	const numOfCompletedSubTasks = subtasks.filter((subtask) => subtask.isCompleted).length;
 
@@ -76,9 +83,15 @@ export default function Task({
 						)}
 						<h3 className="mb-2 font-bold text-tertiary-darker dark:text-white">{title}</h3>
 					</div>
-					<span className="hover:text-tertiary-darker dark:transition-colors dark:hover:text-white">
-						<Icons icon="Ellipsis" className="h-6 w-6" />
-					</span>
+					<EditTask
+						title={title}
+						description={description}
+						subtasks={subtasks}
+						status={status}
+						columns={columns as Types.Columns[]}
+						labels={labels}
+						date={dueDate}
+					/>
 				</div>
 				<p className="mb-4 text-xs"> {description}</p>
 

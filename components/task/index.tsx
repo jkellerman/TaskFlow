@@ -86,7 +86,7 @@ export default function Task({
 					<EditTask
 						title={title}
 						description={description}
-						subtasks={subtasks}
+						subTaskList={subtasks}
 						status={status}
 						columns={columns as Types.Columns[]}
 						labels={labels}

@@ -23,6 +23,11 @@ export declare namespace Types {
 		}[];
 	}
 
+	export interface dueDate {
+		startDate: Date | null;
+		endDate: Date | null;
+	}
+
 	export interface TaskList {
 		color: string;
 		title: string;

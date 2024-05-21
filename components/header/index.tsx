@@ -5,8 +5,8 @@ export default function Header() {
 	return (
 		<header className="flex">
 			<div className="flex w-full items-center ">
-				<div className="flex w-full items-center justify-between bg-white py-7 pl-4 pr-6 transition-colors  dark:bg-tertiary sm:pl-8">
-					<h1 className="w-2/4 truncate font-bold tracking-wide text-tertiary-darker dark:text-white sm:w-4/5 sm:text-2xl">
+				<div className="flex w-full items-center justify-between bg-white py-3 pl-4 pr-6 transition-colors  dark:bg-tertiary sm:pl-8">
+					<h1 className="w-2/4 truncate font-bold tracking-wide text-tertiary-darker dark:text-white sm:w-4/5 sm:text-xl">
 						Platform Launch
 					</h1>
 					<div className="flex items-center gap-4 sm:gap-8">

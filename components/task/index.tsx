@@ -10,9 +10,9 @@ import Progress from "./progress";
 
 interface TaskProps {
 	/**
-	 * To access color index in columnColors
+	 * To access color index for column color/theme
 	 */
-	index?: number;
+	columnIndex: number;
 	/**
 	 * Date for task completion
 	 */
@@ -59,7 +59,7 @@ export default function Task({
 	description,
 	subtasks,
 	color,
-	index,
+	columnIndex,
 	format,
 	labels,
 	dueDate,
@@ -104,7 +104,7 @@ export default function Task({
 								numOfCompletedSubTasks={numOfCompletedSubTasks}
 								numOfSubTasks={subtasks.length}
 								color={color as string[]}
-								index={index as number}
+								columnIndex={columnIndex as number}
 							/>
 						</div>
 					</DialogTrigger>

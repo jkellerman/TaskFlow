@@ -36,21 +36,24 @@ export default function Columns({ columns }: ColumnsProps) {
 
 	return (
 		<>
-			{columns.map((column, index) => (
-				<div key={index}>
+			{columns.map((column, columnIndex) => (
+				<div key={columnIndex}>
 					<div className="mb-4 flex w-80 items-center rounded-[10px] border border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-medium dark:text-white">
 						<div className="flex w-full items-center justify-between">
 							<div className="flex items-center">
 								<Popover>
 									<PopoverTrigger
 										className={"mr-3 h-4 w-4 rounded-full"}
-										style={{ backgroundColor: columnColors[index] }}
+										style={{ backgroundColor: columnColors[columnIndex] }}
 									>
 										<span className=" sr-only">color picker</span>
 									</PopoverTrigger>
 
 									<PopoverContent className="animate-scale">
-										<HexColorPicker color={columnColors[index]} onChange={(color) => handleColorChange(color, index)} />
+										<HexColorPicker
+											color={columnColors[columnIndex]}
+											onChange={(color) => handleColorChange(color, columnIndex)}
+										/>
 									</PopoverContent>
 								</Popover>
 
@@ -70,7 +73,7 @@ export default function Columns({ columns }: ColumnsProps) {
 						{column.tasks.map((task, i) => (
 							<Task
 								key={i}
-								index={index}
+								columnIndex={columnIndex}
 								title={task.title}
 								description={task.description}
 								subtasks={task.subtasks}

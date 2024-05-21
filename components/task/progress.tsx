@@ -9,10 +9,10 @@ interface ProgressProps {
 	numOfCompletedSubTasks: number;
 	numOfSubTasks: number;
 	color: string[];
-	index: number;
+	columnIndex: number;
 }
 
-export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color, index }: ProgressProps) {
+export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color, columnIndex }: ProgressProps) {
 	const [progress, setProgress] = useState(0);
 
 	useEffect(() => {
@@ -36,7 +36,7 @@ export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color,
 				>
 					<ProgressBar.Indicator
 						className="h-full rounded-md transition-width duration-500"
-						style={{ backgroundColor: color[index], width: `${progress}%` }}
+						style={{ backgroundColor: color[columnIndex], width: `${progress}%` }}
 					/>
 				</ProgressBar.Root>
 			</div>

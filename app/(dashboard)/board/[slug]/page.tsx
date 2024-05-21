@@ -16,7 +16,7 @@ export default function Page() {
 	});
 	return (
 		<>
-			<div className="flex items-center justify-between gap-2 border-t border-border bg-white px-4 py-5 transition-colors dark:bg-tertiary sm:gap-0 sm:px-8">
+			<div className="flex items-center justify-between gap-2  bg-white px-4 py-5 transition-colors dark:bg-tertiary sm:gap-0 sm:px-8">
 				<Search />
 				<div className="flex items-center gap-2">
 					<CreateTask columns={columns} triggerVariant="primary" triggerText="Create Task" />

@@ -33,7 +33,7 @@ export default function NavLinks() {
 									})}
 								>
 									<Link
-										href={link.href}
+										href={link.name === "Board" ? "/board/platform launch" : link.href}
 										className="relative flex items-center justify-center px-4 py-2 after:absolute after:h-full after:w-full after:content-['']"
 									>
 										<Icons icon={link.icon} className="h-6 w-6" />

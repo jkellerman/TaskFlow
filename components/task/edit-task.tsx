@@ -63,7 +63,7 @@ export default function EditTask({ title, description, subTaskList, status, colu
 		<>
 			<DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
 				<DropdownMenuTrigger asChild>
-					<span className="max-h-[24px] cursor-pointer hover:text-tertiary-darker dark:transition-colors dark:hover:text-white">
+					<span className="absolute right-4 top-6 z-10 max-h-[24px] cursor-pointer hover:text-tertiary-darker dark:transition-colors dark:hover:text-white">
 						<Icons icon="Ellipsis" className="h-6 w-6" />
 					</span>
 				</DropdownMenuTrigger>

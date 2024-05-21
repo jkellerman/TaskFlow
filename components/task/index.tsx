@@ -2,6 +2,8 @@ import { formatDate } from "@/lib/formatter";
 import { Types } from "@/types";
 
 import Icons from "../icons";
+import Modal from "../modal/task";
+import { Dialog, DialogTrigger } from "../ui/dialog";
 import EditTask from "./edit-task";
 import Label from "./label";
 import Progress from "./progress";
@@ -68,39 +70,52 @@ export default function Task({
 
 	if (format === "column") {
 		return (
-			<div className="mb-4 max-w-80 rounded-[10px] border border-border bg-white p-6 transition-colors dark:bg-tertiary-medium dark:drop-shadow-md">
-				<div className="mb-2 flex  justify-between">
-					<div>
-						{(labels.length > 0 || dueDate) && (
-							<div className=" mb-2 flex flex-wrap items-center gap-2">
-								{labels.length > 0 && <Label label={labels} />}
-								{dueDate && (
-									<span className="inline-flex rounded-2xl border  border-label bg-label-bg px-4 py-1 text-xs font-medium capitalize text-label-fg transition-colors dark:drop-shadow-md">
-										{formatDate(dueDate)}
-									</span>
-								)}
+			<div className="relative">
+				<EditTask
+					title={title}
+					description={description}
+					subTaskList={subtasks}
+					status={status}
+					columns={columns as Types.Columns[]}
+					labels={labels}
+					date={dueDate}
+				/>
+				<Dialog>
+					<DialogTrigger asChild>
+						<div className="mb-4 max-w-80 cursor-pointer rounded-[10px] border border-border bg-white p-6 transition-colors dark:bg-tertiary-medium dark:drop-shadow-md">
+							<div className="mb-2 flex  justify-between">
+								<div>
+									{(labels.length > 0 || dueDate) && (
+										<div className=" mb-2 flex flex-wrap items-center gap-2">
+											{labels.length > 0 && <Label label={labels} />}
+											{dueDate && (
+												<span className="inline-flex rounded-2xl border  border-label bg-label-bg px-4 py-1 text-xs font-medium capitalize text-label-fg transition-colors dark:drop-shadow-md">
+													{formatDate(dueDate)}
+												</span>
+											)}
+										</div>
+									)}
+									<h3 className="mb-2 font-bold text-tertiary-darker dark:text-white">{title}</h3>
+								</div>
 							</div>
-						)}
-						<h3 className="mb-2 font-bold text-tertiary-darker dark:text-white">{title}</h3>
-					</div>
-					<EditTask
+							<p className="mb-4 text-xs"> {description}</p>
+
+							<Progress
+								numOfCompletedSubTasks={numOfCompletedSubTasks}
+								numOfSubTasks={subtasks.length}
+								color={color as string[]}
+								index={index as number}
+							/>
+						</div>
+					</DialogTrigger>
+					<Modal
 						title={title}
 						description={description}
-						subTaskList={subtasks}
+						subtasks={subtasks}
 						status={status}
 						columns={columns as Types.Columns[]}
-						labels={labels}
-						date={dueDate}
 					/>
-				</div>
-				<p className="mb-4 text-xs"> {description}</p>
-
-				<Progress
-					numOfCompletedSubTasks={numOfCompletedSubTasks}
-					numOfSubTasks={subtasks.length}
-					color={color as string[]}
-					index={index as number}
-				/>
+				</Dialog>
 			</div>
 		);
 	} else if (format == "list") {

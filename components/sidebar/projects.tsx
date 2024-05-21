@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Icons from "../icons";
 import { Button } from "../ui/button";
-import { Tooltip, TooltipArrow, TooltipContent, TooltipPortal, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import { Tooltip, TooltipArrow, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
 
 const projects = [{ name: "platform launch" }];
 
@@ -17,21 +17,20 @@ export default function Projects() {
 							<TooltipTrigger asChild>
 								<li className="hover:text-tertiary-darker hover:transition-colors dark:hover:text-white">
 									<Button asChild variant="ghost" size="md">
-										<Link href={`board/${project.name}`}>
+										<Link href={`/board/${encodeURIComponent(project.name)}`}>
 											<Icons icon="Folder" className="h-6 w-6" />
 										</Link>
 									</Button>
 								</li>
 							</TooltipTrigger>
-							<TooltipPortal>
-								<TooltipContent
-									side="right"
-									sideOffset={4}
-									className="animate-enter-l rounded-md bg-tertiary-lighter px-4 py-1 capitalize text-white dark:bg-white dark:text-tertiary-darker"
-								>
-									{project.name}
-								</TooltipContent>
-							</TooltipPortal>
+
+							<TooltipContent
+								side="right"
+								sideOffset={4}
+								className="z-50 animate-enter-l rounded-md bg-tertiary-lighter px-4 py-1 capitalize text-white dark:bg-white dark:text-tertiary-darker"
+							>
+								{project.name}
+							</TooltipContent>
 						</Tooltip>
 					</TooltipProvider>
 				))}

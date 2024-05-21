@@ -15,6 +15,8 @@ const Links = [
 export default function NavLinks() {
 	const pathname = usePathname();
 
+	const newPath = `/${pathname.split("/")[1]}`;
+
 	return (
 		<nav>
 			<ul className="text-text">
@@ -25,9 +27,9 @@ export default function NavLinks() {
 								<li
 									className={clsx(`mb-4 rounded-md last:mb-0`, {
 										"border-t border-primary-lighter bg-primary text-primary-foreground transition-colors dark:border-tertiary-lighter dark:bg-tertiary-medium dark:text-white":
-											pathname === link.href,
+											newPath === link.href,
 										"border-t border-transparent hover:bg-secondary-medium hover:text-primary hover:transition-colors hover:duration-300 dark:hover:bg-tertiary-lighter dark:hover:text-white":
-											pathname !== link.href,
+											newPath !== link.href,
 									})}
 								>
 									<Link

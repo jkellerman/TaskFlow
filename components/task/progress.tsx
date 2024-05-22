@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 
-import * as ProgressBar from "@radix-ui/react-progress";
 import Icons from "@/components/icons";
+
+import { Progress as ProgressBar } from "../ui/progress";
 
 interface ProgressProps {
 	numOfCompletedSubTasks: number;
@@ -29,16 +30,11 @@ export default function Progress({ numOfCompletedSubTasks, numOfSubTasks, color,
 					</div>
 					{numOfCompletedSubTasks}/{numOfSubTasks}
 				</div>
-				<ProgressBar.Root
-					className="h-[5px] w-full rounded-md bg-secondary-medium transition-colors dark:bg-tertiary-lighter	"
+				<ProgressBar
 					value={numOfCompletedSubTasks}
 					max={numOfSubTasks}
-				>
-					<ProgressBar.Indicator
-						className="h-full rounded-md transition-width duration-500"
-						style={{ backgroundColor: color[columnIndex], width: `${progress}%` }}
-					/>
-				</ProgressBar.Root>
+					style={{ backgroundColor: color[columnIndex], width: `${progress}%` }}
+				/>
 			</div>
 		</>
 	);

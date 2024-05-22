@@ -3,13 +3,12 @@
 import { useState } from "react";
 
 import { Types } from "@/types";
-import { HexColorPicker } from "react-colorful";
 import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
 import Task from "../task";
 import CreateTask from "../task/create-task";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import ColorPicker from "./color-picker";
 
 interface ColumnsProps {
 	columns: Types.Columns[];
@@ -41,21 +40,11 @@ export default function Columns({ columns }: ColumnsProps) {
 					<div className="mb-4 flex w-80 items-center rounded-[10px] border border-border bg-white px-4 py-3 text-sm font-bold tracking-wider text-tertiary transition-colors dark:bg-tertiary-medium dark:text-white">
 						<div className="flex w-full items-center justify-between">
 							<div className="flex items-center">
-								<Popover>
-									<PopoverTrigger
-										className={"mr-3 h-4 w-4 rounded-full"}
-										style={{ backgroundColor: columnColors[columnIndex] }}
-									>
-										<span className=" sr-only">color picker</span>
-									</PopoverTrigger>
-
-									<PopoverContent className="animate-scale">
-										<HexColorPicker
-											color={columnColors[columnIndex]}
-											onChange={(color) => handleColorChange(color, columnIndex)}
-										/>
-									</PopoverContent>
-								</Popover>
+								<ColorPicker
+									columnColors={columnColors}
+									columnIndex={columnIndex}
+									handleColorChange={handleColorChange}
+								/>
 
 								<span>
 									{column.name} ({column.tasks.length})

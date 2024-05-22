@@ -12,7 +12,7 @@ interface TaskProps {
 	/**
 	 * To access color index for column color/theme
 	 */
-	columnIndex: number;
+	columnIndex?: number;
 	/**
 	 * Date for task completion
 	 */

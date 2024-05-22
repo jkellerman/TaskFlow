@@ -68,7 +68,7 @@ export default function Settings() {
 				</div>
 				<div className="item-center flex justify-end gap-6 rounded-b-xl bg-secondary-medium px-8 py-4 dark:bg-tertiary-medium dark:text-text">
 					<Alert>
-						<AlertTrigger>
+						<AlertTrigger asChild>
 							<Button variant="destructive">Delete Account</Button>
 						</AlertTrigger>
 						<AlertContent className="border px-8 dark:border-destructive">

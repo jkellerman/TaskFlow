@@ -104,9 +104,9 @@ export default function Icons({ icon, className }: IconsProps) {
 			<path
 				d="M1 9.5L5.25 5.25L1 1"
 				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 			/>
 		</svg>
 	);

@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 
+import ColorPicker from "@/components/ui/color-picker";
 import { Types } from "@/types";
 import { useDebouncedCallback } from "use-debounce";
 
 import Icons from "../icons";
 import Task from "../task";
 import CreateTask from "../task/create-task";
-import ColorPicker from "./color-picker";
 
 interface ColumnsProps {
 	columns: Types.Columns[];
